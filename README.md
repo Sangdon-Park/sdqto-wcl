@@ -21,7 +21,7 @@ pip install -r requirements.txt
 python simulator.py
 ```
 
-`simulator.py` is deterministic: it reads `cached/llm_profile_summary.json` and `cached/service_prompt_bank.json`, runs the 4000-request trace with seed `20260315`, and writes the full statistics to `outputs/experiment_summary.json` along with all paper figures (`baseline_comparison.pdf`, `state_trace.pdf`, `load_ablation.pdf`, etc.) under `outputs/`.
+`simulator.py` is deterministic: it reads `cached/llm_profile_summary.json` (whose measured per-token decode times overwrite the placeholder `g_e`/`g_c` constants in `SERVICE_PARAMS`) and `cached/service_prompt_bank.json`, runs the 4000-request trace with seed `20260315`, and writes the full statistics to `outputs/experiment_summary.json` along with all paper figures (`baseline_comparison.pdf`, `state_trace.pdf`, `load_ablation.pdf`, etc.) under `outputs/`. A fresh run reproduces the cached headline numbers exactly (verified: `proposed.objective = 5.4243` to all reported digits).
 
 Expected runtime on a recent laptop: about 4-6 minutes (most of it is the load-sweep and oracle ablations).
 
