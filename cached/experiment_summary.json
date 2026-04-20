@@ -1,0 +1,983 @@
+{
+  "seed": 20260315,
+  "n_requests": 4000,
+  "mean_interarrival_s": 3.5,
+  "wireless_channel": {
+    "model": "geometry-shadowing-fading emulation",
+    "carrier_frequency_ghz": 3.5,
+    "bandwidth_mhz": 20.0,
+    "tx_power_dbm": 23.0,
+    "noise_figure_db": 7.0,
+    "interference_margin_db": 32.0,
+    "spectral_efficiency_scale": 0.45,
+    "edge_user_fraction": 0.35,
+    "cell_center_radius_m": [
+      20.0,
+      80.0
+    ],
+    "cell_edge_radius_m": [
+      80.0,
+      350.0
+    ],
+    "shadowing_std_db": {
+      "center": 4.0,
+      "edge": 8.0
+    },
+    "rate_clip_mbps": [
+      4.5,
+      28.0
+    ],
+    "realized_rate_stats_mbps": {
+      "mean": 14.044035424153236,
+      "std": 9.362355831390932,
+      "p10": 4.5,
+      "median": 11.289447259589082,
+      "p90": 28.0,
+      "cell_center_mean": 17.321332030951712,
+      "cell_edge_mean": 8.004213035078292
+    },
+    "prompt_quality_stats": {
+      "edge_mean": 0.7196128375462506,
+      "cloud_mean": 0.8963087365688963,
+      "edge_std": 0.046324322385705774,
+      "cloud_std": 0.014449597679738949,
+      "mean_gap": 0.1766958990226458
+    },
+    "prompt_input_tokens": {
+      "mean": 55.7775,
+      "std": 23.486900471326564,
+      "p10": 35.0,
+      "median": 43.0,
+      "p90": 89.0
+    }
+  },
+  "weights": {
+    "alpha": 1.0,
+    "beta": 12.0,
+    "gamma": 1.0
+  },
+  "nominal_delays_s": {
+    "W_edge": 0.45,
+    "W_cloud": 0.15,
+    "T_backhaul": 3.0
+  },
+  "results": {
+    "proposed": {
+      "objective": 5.424281395340636,
+      "delay": 4.671190552251149,
+      "shortfall": 0.03110769170071411,
+      "cost": 0.37979854268090824,
+      "cloud_ratio": 0.339,
+      "delay_p95": 9.065267362152653,
+      "per_service": {
+        "dialogue": {
+          "objective": 4.285635161365788,
+          "delay": 3.843125055581005,
+          "shortfall": 0.016608938755591364,
+          "cost": 0.2432028407176877,
+          "cloud_ratio": 0.19581211092246745
+        },
+        "summary": {
+          "objective": 6.511732804542734,
+          "delay": 5.613561262941355,
+          "shortfall": 0.03190613068556712,
+          "cost": 0.5152979733745671,
+          "cloud_ratio": 0.44641418211120065
+        },
+        "code": {
+          "objective": 6.092084516927044,
+          "delay": 4.96726885935759,
+          "shortfall": 0.05593474177513906,
+          "cost": 0.4535987562677812,
+          "cloud_ratio": 0.4596774193548387
+        }
+      }
+    },
+    "rollout_h5": {
+      "objective": 5.171123589724943,
+      "delay": 4.425578464101591,
+      "shortfall": 0.0297316510776922,
+      "cost": 0.3887653126910534,
+      "cloud_ratio": 0.34525,
+      "delay_p95": 8.703481668725006,
+      "per_service": {
+        "dialogue": {
+          "objective": 3.855391753054029,
+          "delay": 3.4086164538839934,
+          "shortfall": 0.01737962116685235,
+          "cost": 0.2382198451678156,
+          "cloud_ratio": 0.1488398415393322
+        },
+        "summary": {
+          "objective": 6.428841770250691,
+          "delay": 5.543267298795905,
+          "shortfall": 0.028409463357000602,
+          "cost": 0.5446609111707725,
+          "cloud_ratio": 0.5221595487510072
+        },
+        "code": {
+          "objective": 5.941355337068729,
+          "delay": 4.838804298979422,
+          "shortfall": 0.053387771857765394,
+          "cost": 0.46189777579611946,
+          "cloud_ratio": 0.4737903225806452
+        }
+      }
+    },
+    "ema_threshold": {
+      "objective": 6.023957577690675,
+      "delay": 5.324159803413538,
+      "shortfall": 0.026465659965167677,
+      "cost": 0.3822098546951504,
+      "cloud_ratio": 0.32825,
+      "delay_p95": 11.337385109975926,
+      "per_service": {
+        "dialogue": {
+          "objective": 4.8715761303633816,
+          "delay": 4.453986714139754,
+          "shortfall": 0.015294112115425655,
+          "cost": 0.23406007083851108,
+          "cloud_ratio": 0.12959818902093945
+        },
+        "summary": {
+          "objective": 7.1474203647171155,
+          "delay": 6.284443234148566,
+          "shortfall": 0.027847111749197552,
+          "cost": 0.5288117895781854,
+          "cloud_ratio": 0.48106365834004833
+        },
+        "code": {
+          "objective": 6.671176023988627,
+          "delay": 5.67283330261167,
+          "shortfall": 0.04463677224995929,
+          "cost": 0.4627014543774424,
+          "cloud_ratio": 0.4909274193548387
+        }
+      }
+    },
+    "nominal_threshold": {
+      "objective": 6.841231111033307,
+      "delay": 6.115323064045027,
+      "shortfall": 0.030002838423401977,
+      "cost": 0.3658739859074548,
+      "cloud_ratio": 0.2545,
+      "delay_p95": 14.343389726867585,
+      "per_service": {
+        "dialogue": {
+          "objective": 6.061630620522166,
+          "delay": 5.622715958559225,
+          "shortfall": 0.018282550562541303,
+          "cost": 0.2195240552124266,
+          "cloud_ratio": 0.04923599320882852
+        },
+        "summary": {
+          "objective": 7.650726070392499,
+          "delay": 6.771172041141752,
+          "shortfall": 0.030906446050354797,
+          "cost": 0.5086766766464909,
+          "cloud_ratio": 0.40934730056406127
+        },
+        "code": {
+          "objective": 7.217209762412809,
+          "delay": 6.172307111238963,
+          "shortfall": 0.049749180747083996,
+          "cost": 0.4479124822088359,
+          "cloud_ratio": 0.4264112903225806
+        }
+      }
+    },
+    "delay_aware": {
+      "objective": 5.583304020878977,
+      "delay": 4.673234402107704,
+      "shortfall": 0.04503457087325151,
+      "cost": 0.36965476829226607,
+      "cloud_ratio": 0.30025,
+      "delay_p95": 9.130312194541327,
+      "per_service": {
+        "dialogue": {
+          "objective": 4.383126725462352,
+          "delay": 3.921730526880562,
+          "shortfall": 0.017805251079424378,
+          "cost": 0.24773318562869628,
+          "cloud_ratio": 0.22184493491794002
+        },
+        "summary": {
+          "objective": 6.648273499244555,
+          "delay": 5.614446594775722,
+          "shortfall": 0.04366280469957214,
+          "cost": 0.5098732480739626,
+          "cloud_ratio": 0.4254633360193392
+        },
+        "code": {
+          "objective": 6.388834422440984,
+          "delay": 4.834386636407417,
+          "shortfall": 0.09525288730190891,
+          "cost": 0.4114131384106542,
+          "cloud_ratio": 0.28326612903225806
+        }
+      }
+    },
+    "quality_only": {
+      "objective": 7.139212828046625,
+      "delay": 6.60096551813407,
+      "shortfall": 0.014138501539187564,
+      "cost": 0.3685852914423284,
+      "cloud_ratio": 0.30425,
+      "delay_p95": 15.403510542850649,
+      "per_service": {
+        "dialogue": {
+          "objective": 5.896376741539017,
+          "delay": 5.57473922238954,
+          "shortfall": 0.007444230714210883,
+          "cost": 0.2323067505789361,
+          "cloud_ratio": 0.13921901528013583
+        },
+        "summary": {
+          "objective": 8.368729149881615,
+          "delay": 7.6913675478074595,
+          "shortfall": 0.01597754476139589,
+          "cost": 0.4856310649374022,
+          "cloud_ratio": 0.36502820306204675
+        },
+        "code": {
+          "objective": 7.814879773068593,
+          "delay": 7.0648293747428,
+          "shortfall": 0.02376201354420083,
+          "cost": 0.46490623579537665,
+          "cloud_ratio": 0.5221774193548387
+        }
+      }
+    },
+    "token_only": {
+      "objective": 6.496478287884283,
+      "delay": 5.578517317562617,
+      "shortfall": 0.04466909990939397,
+      "cost": 0.38193177140892903,
+      "cloud_ratio": 0.27275,
+      "delay_p95": 13.351063126615811,
+      "per_service": {
+        "dialogue": {
+          "objective": 5.13963890542359,
+          "delay": 4.644539502253247,
+          "shortfall": 0.02092076195071716,
+          "cost": 0.2440502597617316,
+          "cloud_ratio": 0.14091680814940577
+        },
+        "summary": {
+          "objective": 7.883395881598122,
+          "delay": 6.86181709838282,
+          "shortfall": 0.039772429822335524,
+          "cost": 0.544309625347285,
+          "cloud_ratio": 0.4657534246575342
+        },
+        "code": {
+          "objective": 7.178303343337046,
+          "delay": 5.636746926084585,
+          "shortfall": 0.09309660066647159,
+          "cost": 0.4243972092547925,
+          "cloud_ratio": 0.2661290322580645
+        }
+      }
+    },
+    "edge_only": {
+      "objective": 26.32027936651993,
+      "delay": 25.263501080008673,
+      "shortfall": 0.06380214388031234,
+      "cost": 0.2911525599475193,
+      "cloud_ratio": 0.0,
+      "delay_p95": 93.08136558276277,
+      "per_service": {
+        "dialogue": {
+          "objective": 24.839602486538435,
+          "delay": 24.34509516945027,
+          "shortfall": 0.023758619830053673,
+          "cost": 0.20940387912750127,
+          "cloud_ratio": 0.0
+        },
+        "summary": {
+          "objective": 27.637244883517646,
+          "delay": 26.423854240209707,
+          "shortfall": 0.07013997821301174,
+          "cost": 0.3717109047518242,
+          "cloud_ratio": 0.0
+        },
+        "code": {
+          "objective": 27.31020057653302,
+          "delay": 25.447800447092398,
+          "shortfall": 0.1272009892330608,
+          "cost": 0.3359882586439184,
+          "cloud_ratio": 0.0
+        }
+      }
+    },
+    "cloud_only": {
+      "objective": 2814.302296663775,
+      "delay": 2813.737893107154,
+      "shortfall": 0.003542094028446223,
+      "cost": 0.5218984282845897,
+      "cloud_ratio": 1.0,
+      "delay_p95": 5229.166734357531,
+      "per_service": {
+        "dialogue": {
+          "objective": 2804.5471719595553,
+          "delay": 2804.1562514449415,
+          "shortfall": 0.0012917605823578593,
+          "cost": 0.3754193876360674,
+          "cloud_ratio": 1.0
+        },
+        "summary": {
+          "objective": 2857.6766757492805,
+          "delay": 2856.9315004475457,
+          "shortfall": 0.0051847013604346855,
+          "cost": 0.6829588854105759,
+          "cloud_ratio": 1.0
+        },
+        "code": {
+          "objective": 2777.4169145138494,
+          "delay": 2776.7696411996276,
+          "shortfall": 0.0054955854601402366,
+          "cost": 0.5813262887005033,
+          "cloud_ratio": 1.0
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "qstar_summary_we020_wc015": 0.8863172061976248,
+    "qstar_summary_we080_wc015": 0.8363172061976247,
+    "qstar_summary_we045_wc005": 0.8571505395309581,
+    "qstar_summary_we045_wc035": 0.8821505395309581,
+    "ystar_summary_q080_R8": 199.35094934722227,
+    "ystar_summary_q080_R12": 140.7063529432254,
+    "ystar_summary_q080_R20": 113.9007158234919,
+    "ystar_summary_q075_R8": 266.03688945133104,
+    "ystar_summary_q075_R12": 187.77477902980655,
+    "ystar_summary_q075_R20": 152.00224650640223,
+    "edge_grid_size": 61.0,
+    "cloud_grid_size": 49.0,
+    "edge_monotonicity_violations": 0.0,
+    "cloud_monotonicity_violations": 0.0
+  },
+  "boundary_stats": {
+    "boundary_rate_mbps": 14.0,
+    "boundary_service": "code",
+    "boundary_w_edge": 0.45,
+    "boundary_w_cloud": 0.15,
+    "boundary_monotone_columns": 160.0,
+    "boundary_total_columns": 160.0
+  },
+  "load_ablation": {
+    "mean_interarrival_values": [
+      6.0,
+      5.0,
+      4.0,
+      3.5,
+      3.0,
+      2.5
+    ],
+    "objective_curves": {
+      "proposed": [
+        4.712267166285573,
+        4.876253332045427,
+        5.2429070073832635,
+        5.546423710414329,
+        6.234602396692685,
+        7.892334009282282
+      ],
+      "ema_threshold": [
+        5.048505192976623,
+        5.298534139127673,
+        5.809336415507028,
+        6.21064452531364,
+        7.050878245962984,
+        8.865628863393743
+      ],
+      "nominal_threshold": [
+        5.171563356066332,
+        5.532364875617332,
+        6.384132923247438,
+        7.345210042535383,
+        9.47508396736686,
+        26.78913542631259
+      ],
+      "delay_aware": [
+        4.849115766433056,
+        5.004236531710473,
+        5.379848789432564,
+        5.679409017545365,
+        6.363746106666623,
+        8.035159315929835
+      ],
+      "rollout_h5": [
+        4.598906328259264,
+        4.724219342787203,
+        5.0242991359595655,
+        5.25490067569019,
+        5.788137063473742,
+        6.968009151947707
+      ]
+    },
+    "objective_stds": {
+      "proposed": [
+        0.04421224087909854,
+        0.04808327784026269,
+        0.04653464428470923,
+        0.06817898531500247,
+        0.12858618628071566,
+        0.5265030823655739
+      ],
+      "ema_threshold": [
+        0.06118159381409507,
+        0.059455499608586176,
+        0.060532610161637336,
+        0.09077987381790298,
+        0.14610019425933204,
+        0.41754350867790585
+      ],
+      "nominal_threshold": [
+        0.066675936892499,
+        0.09589683357005964,
+        0.13888200747760365,
+        0.3777200124239966,
+        0.6880204032990495,
+        7.225606880702525
+      ],
+      "delay_aware": [
+        0.03966173069249345,
+        0.05507448747841737,
+        0.03867404574505075,
+        0.07440262232541621,
+        0.1304086316789611,
+        0.46162225055290795
+      ],
+      "rollout_h5": [
+        0.04227244786231141,
+        0.04577043636708123,
+        0.03247841680317729,
+        0.06382765145539343,
+        0.07654068644616603,
+        0.34472578087608513
+      ]
+    },
+    "p95_curves": {
+      "proposed": [
+        7.293657366198069,
+        7.681407316419424,
+        8.66044910135405,
+        9.401068752224024,
+        11.523369613411132,
+        16.516755421859553
+      ],
+      "ema_threshold": [
+        8.624978481752505,
+        9.269513824469083,
+        10.673259040683016,
+        11.689355825136827,
+        13.91973157688424,
+        18.729860279778773
+      ],
+      "nominal_threshold": [
+        9.064680148597734,
+        10.134660500553206,
+        12.940951989301785,
+        16.30317396743917,
+        24.032286400395794,
+        84.37714772167737
+      ],
+      "delay_aware": [
+        7.229025931135849,
+        7.6254149049404605,
+        8.578822656869132,
+        9.43534549050505,
+        11.515762701597511,
+        16.500074202300404
+      ],
+      "rollout_h5": [
+        7.2652778627399,
+        7.585609207176387,
+        8.446716061524494,
+        9.170627999393806,
+        10.863952745514508,
+        15.070535521063388
+      ]
+    },
+    "p95_stds": {
+      "proposed": [
+        0.1253963861239219,
+        0.2157032600599393,
+        0.1359431668779667,
+        0.27525219894714853,
+        0.37121568804933447,
+        2.7191258202388235
+      ],
+      "ema_threshold": [
+        0.13471895030185643,
+        0.2726268620615317,
+        0.27713863367879066,
+        0.32114044456997204,
+        0.37279367056382917,
+        1.7988974490549805
+      ],
+      "nominal_threshold": [
+        0.18174998654459212,
+        0.3513491309072541,
+        0.6575868573094755,
+        1.6324254132287197,
+        3.1838210640245106,
+        26.696998372579888
+      ],
+      "delay_aware": [
+        0.12039889769451784,
+        0.2185767569925389,
+        0.13751636122439898,
+        0.2857346812241128,
+        0.4803994960512517,
+        2.4588685768338503
+      ],
+      "rollout_h5": [
+        0.11679048242146922,
+        0.1867513423099904,
+        0.1594988634966916,
+        0.2472441643347768,
+        0.3226223983790972,
+        1.7132044170308318
+      ]
+    },
+    "objective_reduction_vs_nominal_threshold_pct": [
+      8.881186561158474,
+      11.859513215832358,
+      17.875973598677252,
+      24.48924294478253,
+      34.20003011936062,
+      70.53904919406118
+    ],
+    "objective_reduction_vs_ema_threshold_pct": [
+      6.660150160067529,
+      7.969766656099503,
+      9.750328912124596,
+      10.694877354388069,
+      11.576938656367556,
+      10.978294592617162
+    ],
+    "objective_reduction_vs_delay_aware_pct": [
+      2.8221351425508927,
+      2.5574970098645697,
+      2.5454578262179006,
+      2.3415342462605726,
+      2.029366159637452,
+      1.7775043534532073
+    ],
+    "objective_gap_vs_rollout_h5_pct": [
+      2.4649520980614805,
+      3.2181822694228845,
+      4.351012260776692,
+      5.547641196583599,
+      7.713454749307499,
+      13.26526468577048
+    ],
+    "oracle_mean_gap_pct": [
+      2.40150428359941,
+      3.242877180678564,
+      3.2423782059071153,
+      4.651523916847178,
+      5.6670666840978505,
+      6.718828267963413
+    ]
+  },
+  "state_trace": {
+    "trace_window_start_idx": 276.0,
+    "trace_window_end_idx": 347.0,
+    "trace_window_start_time_s": 944.0991154540314,
+    "trace_window_end_time_s": 1184.4884590335985,
+    "trace_window_size": 72.0,
+    "trace_different_actions": 22.0,
+    "trace_peak_nominal_edge_wait_s": 26.705118574118615,
+    "trace_peak_state_aware_edge_wait_s": 9.354613302200278,
+    "trace_peak_nominal_cloud_wait_s": 5.208405814010121,
+    "trace_peak_state_aware_cloud_wait_s": 6.7177614259937855,
+    "trace_mean_nominal_qstar": 0.7393704909254099,
+    "trace_mean_state_aware_qstar": 0.4086284248867528,
+    "trace_cumulative_objective_gain_vs_nominal": 595.641809882331,
+    "trace_mean_objective_gain_vs_nominal": 8.272802915032376
+  },
+  "oracle_gap": {
+    "window_length": 10.0,
+    "num_windows": 12.0,
+    "mean_gap_pct": 3.4587045341491436,
+    "max_gap_pct": 11.913718537573711,
+    "min_gap_pct": 0.0,
+    "mean_oracle_window_cost": 48.1437860450724,
+    "mean_myopic_window_cost": 49.89120150795119
+  },
+  "quality_predictor_robustness": {
+    "reference_objective": 5.424281395340636,
+    "reference_shortfall": 0.03110769170071411,
+    "sigma_0.00": {
+      "sigma": 0.0,
+      "edge_error_mean": 0.0,
+      "cloud_error_mean": 0.0,
+      "edge_error_std": 0.0,
+      "cloud_error_std": 0.0,
+      "delta_error_bound_mean": 0.0,
+      "delta_error_bound_p95": 0.0,
+      "action_match_pct": 100.0,
+      "proposed_objective": 5.424281395340636,
+      "proposed_shortfall": 0.03110769170071411,
+      "proposed_delay_p95": 9.065267362152653,
+      "objective_degradation_pct_vs_perfect_pred": 0.0,
+      "reduction_vs_nominal_threshold_pct": 20.711911243686266,
+      "reduction_vs_delay_aware_pct": 2.8481813804813294,
+      "gap_vs_rollout_h5_pct": 4.895605398384206
+    },
+    "sigma_0.02": {
+      "sigma": 0.02,
+      "edge_error_mean": -0.00016390319735193085,
+      "cloud_error_mean": -0.0003547909955536306,
+      "edge_error_std": 0.02009325859868075,
+      "cloud_error_std": 0.01974079126532679,
+      "delta_error_bound_mean": 0.3819720812395133,
+      "delta_error_bound_p95": 0.7619115117525285,
+      "action_match_pct": 96.72500000000001,
+      "proposed_objective": 5.429251744634661,
+      "proposed_shortfall": 0.030564186977544244,
+      "proposed_delay_p95": 9.162277170242117,
+      "objective_degradation_pct_vs_perfect_pred": 0.0916314794858246,
+      "reduction_vs_nominal_threshold_pct": 20.79850170845521,
+      "reduction_vs_delay_aware_pct": 2.7591597317328853,
+      "gap_vs_rollout_h5_pct": 4.903826134038725
+    },
+    "sigma_0.05": {
+      "sigma": 0.05,
+      "edge_error_mean": 0.0004536759847695131,
+      "cloud_error_mean": -0.0005218230353330817,
+      "edge_error_std": 0.04983089329568926,
+      "cloud_error_std": 0.049307402932565816,
+      "delta_error_bound_mean": 0.9558161294856427,
+      "delta_error_bound_p95": 1.8933349042765981,
+      "action_match_pct": 91.975,
+      "proposed_objective": 5.45071797094673,
+      "proposed_shortfall": 0.03144106492405165,
+      "proposed_delay_p95": 9.194244690023885,
+      "objective_degradation_pct_vs_perfect_pred": 0.487374707897757,
+      "reduction_vs_nominal_threshold_pct": 21.027413467480972,
+      "reduction_vs_delay_aware_pct": 2.374687988267088,
+      "gap_vs_rollout_h5_pct": 5.008849347185218
+    },
+    "sigma_0.08": {
+      "sigma": 0.08,
+      "edge_error_mean": -0.000997599692140116,
+      "cloud_error_mean": -0.006228746918149909,
+      "edge_error_std": 0.0813849925243116,
+      "cloud_error_std": 0.07254976054427495,
+      "delta_error_bound_mean": 1.491944904165384,
+      "delta_error_bound_p95": 2.8926506484117525,
+      "action_match_pct": 86.8,
+      "proposed_objective": 5.513491448573892,
+      "proposed_shortfall": 0.03235131160483849,
+      "proposed_delay_p95": 9.320948528383125,
+      "objective_degradation_pct_vs_perfect_pred": 1.644642796553392,
+      "reduction_vs_nominal_threshold_pct": 19.783044568202545,
+      "reduction_vs_delay_aware_pct": 1.2503809938347987,
+      "gap_vs_rollout_h5_pct": 5.68006593372492
+    }
+  },
+  "cloud_speed_sensitivity": {
+    "1.5x": {
+      "proposed_objective": 5.388845546438197,
+      "reduction_vs_nominal_pct": 19.652305387062473,
+      "reduction_vs_ema_pct": 9.709357592562496
+    },
+    "2.0x": {
+      "proposed_objective": 5.363814566448113,
+      "reduction_vs_nominal_pct": 18.181116134109455,
+      "reduction_vs_ema_pct": 9.848320676453826
+    },
+    "3.0x": {
+      "proposed_objective": 5.341590574515674,
+      "reduction_vs_nominal_pct": 17.666991897401395,
+      "reduction_vs_ema_pct": 9.722301634651743
+    }
+  },
+  "backhaul_sensitivity": {
+    "1.5s": {
+      "proposed_objective": 4.358042116516607,
+      "proposed_delay_p95": 7.3248601907556115,
+      "cloud_ratio": 0.51875,
+      "reduction_vs_delay_aware_pct": 1.6492647437943098,
+      "reduction_vs_nominal_threshold_pct": 17.46422728557093,
+      "p95_minus_delay_aware_s": 0.1846558160504097
+    },
+    "2.0s": {
+      "proposed_objective": 4.742444449528315,
+      "proposed_delay_p95": 7.940530515678197,
+      "cloud_ratio": 0.4465,
+      "reduction_vs_delay_aware_pct": 1.8980439298187046,
+      "reduction_vs_nominal_threshold_pct": 12.853663710261731,
+      "p95_minus_delay_aware_s": 0.18604400690873302
+    },
+    "2.5s": {
+      "proposed_objective": 5.101180665413094,
+      "proposed_delay_p95": 8.517358831614466,
+      "cloud_ratio": 0.384,
+      "reduction_vs_delay_aware_pct": 2.416675920266731,
+      "reduction_vs_nominal_threshold_pct": 15.259213022862761,
+      "p95_minus_delay_aware_s": 0.16306086281996812
+    },
+    "3.0s": {
+      "proposed_objective": 5.424281395340636,
+      "proposed_delay_p95": 9.065267362152653,
+      "cloud_ratio": 0.339,
+      "reduction_vs_delay_aware_pct": 2.8481813804813294,
+      "reduction_vs_nominal_threshold_pct": 20.711911243686266,
+      "p95_minus_delay_aware_s": -0.06504483238867387
+    },
+    "3.5s": {
+      "proposed_objective": 5.767657271719458,
+      "proposed_delay_p95": 9.76670405901096,
+      "cloud_ratio": 0.30075,
+      "reduction_vs_delay_aware_pct": 2.6038058086949922,
+      "reduction_vs_nominal_threshold_pct": 29.597184754843862,
+      "p95_minus_delay_aware_s": -0.11643765405629125
+    },
+    "4.0s": {
+      "proposed_objective": 6.064100960315965,
+      "proposed_delay_p95": 10.304374924630158,
+      "cloud_ratio": 0.27175,
+      "reduction_vs_delay_aware_pct": 3.4505192147489927,
+      "reduction_vs_nominal_threshold_pct": 38.263361980055954,
+      "p95_minus_delay_aware_s": -0.2564482476517309
+    },
+    "5.0s": {
+      "proposed_objective": 6.676771655015062,
+      "proposed_delay_p95": 11.662191034480662,
+      "cloud_ratio": 0.219,
+      "reduction_vs_delay_aware_pct": 3.082732286827039,
+      "reduction_vs_nominal_threshold_pct": 57.19174789237569,
+      "p95_minus_delay_aware_s": -0.41371780027121474
+    }
+  },
+  "quality_anchor_stress": {
+    "edge_overestimated": {
+      "edge_bias": 0.03,
+      "cloud_bias": 0.0,
+      "proposed_objective": 5.452782811466119,
+      "proposed_delay_p95": 9.065267362152653,
+      "cloud_ratio": 0.32875,
+      "reduction_vs_delay_aware_pct": 2.3377055758520116,
+      "reduction_vs_nominal_threshold_pct": 25.508707384367526
+    },
+    "cloud_overestimated": {
+      "edge_bias": 0.0,
+      "cloud_bias": 0.03,
+      "proposed_objective": 5.433644931744438,
+      "proposed_delay_p95": 9.183190723727028,
+      "cloud_ratio": 0.34125,
+      "reduction_vs_delay_aware_pct": 2.6804753704058215,
+      "reduction_vs_nominal_threshold_pct": 20.40205231961858
+    },
+    "both_underestimated": {
+      "edge_bias": -0.03,
+      "cloud_bias": -0.03,
+      "proposed_objective": 5.422752583711619,
+      "proposed_delay_p95": 9.219214864085068,
+      "cloud_ratio": 0.346,
+      "reduction_vs_delay_aware_pct": 2.875563225054023,
+      "reduction_vs_nominal_threshold_pct": 17.284465659200833
+    },
+    "gap_compressed": {
+      "edge_bias": 0.02,
+      "cloud_bias": -0.02,
+      "proposed_objective": 5.451472771716458,
+      "proposed_delay_p95": 9.045971104986346,
+      "cloud_ratio": 0.32975,
+      "reduction_vs_delay_aware_pct": 2.3611690975367083,
+      "reduction_vs_nominal_threshold_pct": 24.267968783245063
+    },
+    "gap_expanded": {
+      "edge_bias": -0.02,
+      "cloud_bias": 0.02,
+      "proposed_objective": 5.437251569302088,
+      "proposed_delay_p95": 9.235060248447935,
+      "cloud_ratio": 0.3505,
+      "reduction_vs_delay_aware_pct": 2.6158785377031313,
+      "reduction_vs_nominal_threshold_pct": 17.572937621634978
+    }
+  },
+  "prompt_diversity_stress": {
+    "num_augmented_seeds": 3.0,
+    "scenario_results": {
+      "aug_seed_11": {
+        "prompt_bank_size": 60.0,
+        "prompt_input_token_mean": 65.902,
+        "quality_gap_mean": 0.1750931978372639,
+        "proposed_objective": 5.420802724003472,
+        "proposed_delay_p95": 8.938403625587544,
+        "delay_aware_delay_p95": 8.945293919256091,
+        "reduction_vs_delay_aware_pct": 2.5967034971857372,
+        "reduction_vs_nominal_threshold_pct": 20.88876521656494
+      },
+      "aug_seed_23": {
+        "prompt_bank_size": 60.0,
+        "prompt_input_token_mean": 67.03125,
+        "quality_gap_mean": 0.17596030340170668,
+        "proposed_objective": 5.5075339268601375,
+        "proposed_delay_p95": 9.277812867536225,
+        "delay_aware_delay_p95": 9.24045627437319,
+        "reduction_vs_delay_aware_pct": 2.9038464772551453,
+        "reduction_vs_nominal_threshold_pct": 25.470364704995397
+      },
+      "aug_seed_37": {
+        "prompt_bank_size": 60.0,
+        "prompt_input_token_mean": 66.4575,
+        "quality_gap_mean": 0.17652165516542462,
+        "proposed_objective": 5.58909977163459,
+        "proposed_delay_p95": 9.22096028819165,
+        "delay_aware_delay_p95": 9.340876621395632,
+        "reduction_vs_delay_aware_pct": 2.6765585882498666,
+        "reduction_vs_nominal_threshold_pct": 21.733727458442175
+      }
+    },
+    "reduction_vs_delay_aware_pct_mean": 2.7257028542302497,
+    "reduction_vs_delay_aware_pct_min": 2.5967034971857372,
+    "reduction_vs_nominal_threshold_pct_mean": 22.697619126667504,
+    "reduction_vs_nominal_threshold_pct_min": 20.88876521656494
+  },
+  "wireless_scenario_stress": {
+    "interference_heavy": {
+      "rate_mean_mbps": 9.486568369913122,
+      "rate_p10_mbps": 4.5,
+      "proposed_objective": 6.24937188814117,
+      "proposed_delay_p95": 10.871933570836072,
+      "delay_aware_delay_p95": 10.853970088001027,
+      "reduction_vs_delay_aware_pct": 2.1794413666399226,
+      "reduction_vs_nominal_threshold_pct": 40.72467497193646
+    },
+    "cell_edge_heavy": {
+      "rate_mean_mbps": 12.075329747014239,
+      "rate_p10_mbps": 4.5,
+      "proposed_objective": 5.655463263832764,
+      "proposed_delay_p95": 9.414492342295159,
+      "delay_aware_delay_p95": 9.306818421175521,
+      "reduction_vs_delay_aware_pct": 2.219540232005912,
+      "reduction_vs_nominal_threshold_pct": 29.531308892835817
+    },
+    "shadowing_heavy": {
+      "rate_mean_mbps": 13.779464086086858,
+      "rate_p10_mbps": 4.5,
+      "proposed_objective": 5.893524963919323,
+      "proposed_delay_p95": 10.321590235581763,
+      "delay_aware_delay_p95": 10.321590235581763,
+      "reduction_vs_delay_aware_pct": 2.1483053395310314,
+      "reduction_vs_nominal_threshold_pct": 23.776183857815735
+    },
+    "wide_coverage": {
+      "rate_mean_mbps": 10.170121207282111,
+      "rate_p10_mbps": 4.5,
+      "proposed_objective": 5.980128472958642,
+      "proposed_delay_p95": 10.218245829424893,
+      "delay_aware_delay_p95": 10.274575909322934,
+      "reduction_vs_delay_aware_pct": 2.128531211333895,
+      "reduction_vs_nominal_threshold_pct": 37.161466778945304
+    }
+  },
+  "multi_edge_extension": {
+    "edge_count": 4.0,
+    "results": {
+      "proposed": {
+        "objective": 4.417729148208828,
+        "delay": 3.6159315249930044,
+        "shortfall": 0.03731554896783172,
+        "cost": 0.3540110356018452,
+        "cloud_ratio": 0.22125,
+        "delay_p95": 6.437153979085412,
+        "edge_request_load_std": 5.2141634036535525,
+        "edge_request_load_mean": 778.75
+      },
+      "rollout_h5": {
+        "objective": 4.509157508342142,
+        "delay": 3.727644838970643,
+        "shortfall": 0.03404563537634864,
+        "cost": 0.37296504485531723,
+        "cloud_ratio": 0.2805,
+        "delay_p95": 6.929700438068636,
+        "edge_request_load_std": 8.789197915623474,
+        "edge_request_load_mean": 719.5
+      },
+      "ema_threshold": {
+        "objective": 4.587591183989636,
+        "delay": 3.7969306793813926,
+        "shortfall": 0.03693260041699249,
+        "cost": 0.34746929960433315,
+        "cloud_ratio": 0.18575,
+        "delay_p95": 7.294959254237455,
+        "edge_request_load_std": 15.706288549495072,
+        "edge_request_load_mean": 814.25
+      },
+      "nominal_threshold": {
+        "objective": 4.685413471830864,
+        "delay": 3.9595054248425914,
+        "shortfall": 0.030002838423401977,
+        "cost": 0.3658739859074548,
+        "cloud_ratio": 0.2545,
+        "delay_p95": 7.994025048576592,
+        "edge_request_load_std": 19.56399754651385,
+        "edge_request_load_mean": 745.5
+      },
+      "delay_aware": {
+        "objective": 4.505676895184583,
+        "delay": 3.524840277303311,
+        "shortfall": 0.053649726980253575,
+        "cost": 0.33703989411823815,
+        "cloud_ratio": 0.1495,
+        "delay_p95": 6.285859206864712,
+        "edge_request_load_std": 10.5,
+        "edge_request_load_mean": 850.5
+      }
+    },
+    "improvements": {
+      "vs_nominal_threshold_objective_reduction": 0.05713141972023994,
+      "vs_ema_threshold_objective_reduction": 0.03702641080434854,
+      "vs_delay_aware_objective_reduction": 0.019519319521057676,
+      "vs_rollout_h5_objective_reduction": 0.020276151357358274
+    }
+  },
+  "improvements": {
+    "vs_rollout_h5_objective_reduction": -0.04895605398384206,
+    "vs_nominal_threshold_objective_reduction": 0.20711911243686265,
+    "vs_ema_threshold_objective_reduction": 0.09954854007785507,
+    "vs_delay_aware_objective_reduction": 0.028481813804813294,
+    "vs_quality_only_objective_reduction": 0.24021295820861732,
+    "vs_token_only_objective_reduction": 0.16504278857412003
+  },
+  "service_improvements": {
+    "dialogue": {
+      "vs_rollout_h5_objective_reduction": -0.11159525046214669,
+      "vs_nominal_threshold_objective_reduction": 0.29298972014949143,
+      "vs_ema_threshold_objective_reduction": 0.1202774940425465,
+      "vs_delay_aware_objective_reduction": 0.022242469862944758,
+      "vs_quality_only_objective_reduction": 0.2731748073059538,
+      "vs_token_only_objective_reduction": 0.16616026140603313
+    },
+    "summary": {
+      "vs_rollout_h5_objective_reduction": -0.012893618672591867,
+      "vs_nominal_threshold_objective_reduction": 0.1488738788149203,
+      "vs_ema_threshold_objective_reduction": 0.0889394393692613,
+      "vs_delay_aware_objective_reduction": 0.020537767394397277,
+      "vs_quality_only_objective_reduction": 0.22189705415010952,
+      "vs_token_only_objective_reduction": 0.17399393581859857
+    },
+    "code": {
+      "vs_rollout_h5_objective_reduction": -0.02536949421589041,
+      "vs_nominal_threshold_objective_reduction": 0.1558947685496701,
+      "vs_ema_threshold_objective_reduction": 0.08680501083755698,
+      "vs_delay_aware_objective_reduction": 0.04644820727730803,
+      "vs_quality_only_objective_reduction": 0.22045064110628987,
+      "vs_token_only_objective_reduction": 0.15131971643664766
+    }
+  },
+  "measured_profile": {
+    "profile_path": "C:\\Users\\Sayberry\\Dropbox\\\uc571\\Overleafss\\State-Dependent Quality Threshold Routing for Wireless Edge-Cloud LLM Inference\\paper1_figs\\llm_profile_summary.json",
+    "edge_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "cloud_model": "gemini-3-flash-preview"
+  }
+}

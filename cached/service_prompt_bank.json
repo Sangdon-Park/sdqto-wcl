@@ -1,0 +1,98 @@
+{
+  "dialogue": [
+    {
+      "id": "dlg_01",
+      "difficulty": 0.25,
+      "target_new_tokens": 32,
+      "prompt": "A student says: \"I missed one deadline and now I feel like I ruined the whole semester.\" Reply with a calm, practical response in three short sentences."
+    },
+    {
+      "id": "dlg_02",
+      "difficulty": 0.45,
+      "target_new_tokens": 32,
+      "prompt": "A user is nervous about giving critical feedback to a coworker. Write a supportive reply with one suggested opening sentence and two concrete tips."
+    },
+    {
+      "id": "dlg_03",
+      "difficulty": 0.55,
+      "target_new_tokens": 32,
+      "prompt": "A roommate conflict has escalated over noise and chores. Draft a balanced message that de-escalates tension while still setting boundaries."
+    },
+    {
+      "id": "dlg_04",
+      "difficulty": 0.72,
+      "target_new_tokens": 32,
+      "prompt": "A startup founder is burned out but must still lead a difficult product review tomorrow. Write an empathetic but disciplined coaching reply."
+    },
+    {
+      "id": "dlg_05",
+      "difficulty": 0.88,
+      "target_new_tokens": 32,
+      "prompt": "A manager needs to address a high-performing employee whose behavior is hurting team trust. Provide a nuanced response balancing empathy, accountability, and next steps."
+    }
+  ],
+  "summary": [
+    {
+      "id": "sum_01",
+      "difficulty": 0.20,
+      "target_new_tokens": 64,
+      "prompt": "Summarize the following note in two sentences for a project manager: The mobile team reduced app startup time by preloading the configuration bundle, but the optimization increased memory pressure on lower-end devices. Engineers added a fallback path that disables preloading when the operating system reports low available memory."
+    },
+    {
+      "id": "sum_02",
+      "difficulty": 0.38,
+      "target_new_tokens": 64,
+      "prompt": "Summarize the following research update in two sentences: A campus Wi-Fi study found that median throughput was stable during lectures but dropped sharply in corridors between classes due to bursty user movement. The authors argue that scheduling policies tuned only for average load will miss these short-lived congestion spikes."
+    },
+    {
+      "id": "sum_03",
+      "difficulty": 0.56,
+      "target_new_tokens": 64,
+      "prompt": "Summarize the following engineering report in three sentences: The team replaced a rule-based alerting pipeline with a learned ranking model. Precision improved, but recall fell on rare incidents because the training data underrepresented severe outage patterns. A hybrid design that preserves a small set of expert rules is now under evaluation."
+    },
+    {
+      "id": "sum_04",
+      "difficulty": 0.72,
+      "target_new_tokens": 64,
+      "prompt": "Summarize the following policy brief in three sentences: Regulators are considering stricter audit requirements for generative AI services deployed in finance and healthcare. Smaller providers argue that compliance costs could slow innovation, while advocates claim that transparent incident reporting is necessary to build trust and reduce hidden risk."
+    },
+    {
+      "id": "sum_05",
+      "difficulty": 0.90,
+      "target_new_tokens": 64,
+      "prompt": "Summarize the following technical argument in three sentences: Distributed training systems often optimize average step time, yet user-facing inference clusters are harmed more by tail latency than by mean latency. The report contends that operators should co-design scheduling, batching, and admission control because optimizing any single layer in isolation can worsen end-to-end responsiveness under bursty demand."
+    }
+  ],
+  "code": [
+    {
+      "id": "code_01",
+      "difficulty": 0.24,
+      "target_new_tokens": 64,
+      "prompt": "Write a Python function `clamp(value, low, high)` that returns `value` clipped to the inclusive range `[low, high]`. Include only the function."
+    },
+    {
+      "id": "code_02",
+      "difficulty": 0.42,
+      "target_new_tokens": 64,
+      "prompt": "Write a Python function `merge_ranges(intervals)` that merges overlapping inclusive integer intervals represented as `(start, end)` tuples. Return the merged intervals sorted by start."
+    },
+    {
+      "id": "code_03",
+      "difficulty": 0.58,
+      "target_new_tokens": 64,
+      "prompt": "Write a Python function `top_k_frequent(items, k)` that returns the `k` most frequent strings from `items`, breaking ties by lexicographic order. Include only the function."
+    },
+    {
+      "id": "code_04",
+      "difficulty": 0.76,
+      "target_new_tokens": 64,
+      "prompt": "Write a Python function `normalize_path(path)` that resolves repeated slashes, removes `.` segments, and correctly handles `..` without going above the root. Assume Unix-style paths and include only the function."
+    },
+    {
+      "id": "code_05",
+      "difficulty": 0.92,
+      "target_new_tokens": 64,
+      "prompt": "Write a Python function `diff_maps(old, new)` that returns three dictionaries: added keys, removed keys, and changed keys mapping to `(old_value, new_value)`. Nested dictionaries should be compared recursively."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "device": "cuda",
+  "edge": {
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "role": "edge",
+    "services": {
+      "dialogue": {
+        "target_new_tokens": 32,
+        "ttft_sec_mean": 0.02619703666229422,
+        "ttft_sec_std": 0.001984820392844629,
+        "tpot_sec_mean": 0.02346210892710294,
+        "tpot_sec_std": 0.0012663442970276527,
+        "peak_vram_gb_mean": 0.9484109878540039,
+        "prompt_count": 30
+      },
+      "summary": {
+        "target_new_tokens": 64,
+        "ttft_sec_mean": 0.02676285001022431,
+        "ttft_sec_std": 0.003763481338071138,
+        "tpot_sec_mean": 0.022819635503101236,
+        "tpot_sec_std": 0.0005949376103948533,
+        "peak_vram_gb_mean": 0.9740301767985026,
+        "prompt_count": 30
+      },
+      "code": {
+        "target_new_tokens": 64,
+        "ttft_sec_mean": 0.026847759999024372,
+        "ttft_sec_std": 0.002087341502077425,
+        "tpot_sec_mean": 0.023135028465400893,
+        "tpot_sec_std": 0.000652210433185362,
+        "peak_vram_gb_mean": 0.9513920148213705,
+        "prompt_count": 30
+      }
+    }
+  },
+  "cloud": {
+    "model_name": "gemini-3-flash-preview",
+    "role": "cloud",
+    "services": {
+      "dialogue": {
+        "target_new_tokens": 32,
+        "ttft_sec_mean": 1.8198873400004232,
+        "ttft_sec_std": 1.4391846936110282,
+        "tpot_sec_mean": 0.0012926800001878292,
+        "tpot_sec_std": 0.0017641942551930782,
+        "latency_sec_mean": 1.821180020000611,
+        "latency_sec_std": 1.440801084414207,
+        "peak_vram_gb_mean": 0.0,
+        "prompt_count": 5,
+        "timing_mode": "streaming_ttft_plus_decode_per_token"
+      },
+      "summary": {
+        "target_new_tokens": 64,
+        "ttft_sec_mean": 1.4348838200006866,
+        "ttft_sec_std": 0.10618998209716593,
+        "tpot_sec_mean": 0.0010722366651558938,
+        "tpot_sec_std": 0.0004971387779712352,
+        "latency_sec_mean": 1.4367450999983702,
+        "latency_sec_std": 0.10585314765222156,
+        "peak_vram_gb_mean": 0.0,
+        "prompt_count": 5,
+        "timing_mode": "streaming_ttft_plus_decode_per_token"
+      },
+      "code": {
+        "target_new_tokens": 64,
+        "ttft_sec_mean": 1.3266990000018268,
+        "ttft_sec_std": 0.19537674190228455,
+        "tpot_sec_mean": 0.0016872833322850056,
+        "tpot_sec_std": 0.0006250824283513507,
+        "latency_sec_mean": 1.3290061799998512,
+        "latency_sec_std": 0.19543708873535717,
+        "peak_vram_gb_mean": 0.0,
+        "prompt_count": 5,
+        "timing_mode": "streaming_ttft_plus_decode_per_token"
+      }
+    },
+    "api_provider": "google_gemini"
+  }
+}
